@@ -23,6 +23,11 @@ class CodeBot(BotPlugin):
         return CodePad(args, lang='C++').eval()
 
     @botcmd
+    def scheme(self, mess, args):
+        """ Execute the scheme expression """
+        return CodePad(args, lang='Scheme').eval()
+
+    @botcmd
     def hs(self, mess, args):
         """ Evaluate the Haskell expression in ghci (tryhaskell.org) """
         r = requests.get("http://tryhaskell.org/haskell.json", params={'method':'eval', 'expr':args}).json
