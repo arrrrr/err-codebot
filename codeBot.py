@@ -1,7 +1,7 @@
 __author__ = 'gbin'
 
 from errbot.botplugin import BotPlugin
-from errbot.jabberbot import botcmd
+from errbot import botcmd
 from codepad import CodePad
 
 class CodeBot(BotPlugin):
