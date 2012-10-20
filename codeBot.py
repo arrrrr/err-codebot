@@ -19,7 +19,7 @@ class CodeBot(BotPlugin):
 
     @botcmd
     def cpp(self, mess, args):
-        """ Execute the c expression """
+        """ Execute the c++ expression """
         return CodePad(args, lang='C++').eval()
 
     @botcmd
