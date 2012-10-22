@@ -32,9 +32,9 @@ class CodeBot(BotPlugin):
         """ Evaluate the Haskell expression in ghci (tryhaskell.org) """
         r = requests.get("http://tryhaskell.org/haskell.json", params={'method':'eval', 'expr':args}).json
         if r.has_key('result'):
-            return r['result'] + " :: " + r['type']
+            return "{0} :: {1}".format(r['result'], r['type'])
         else:
-            return r['error']
+            return "{0}: {1}".format(*r.items()[0])
 
     @botcmd
     def haskell(self, mess, args):
