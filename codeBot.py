@@ -40,3 +40,5 @@ class CodeBot(BotPlugin):
     def haskell(self, mess, args):
         """ Execute the Haskell module """
         return CodePad(args, lang='Haskell').eval()
+
+# vim:expandtab
