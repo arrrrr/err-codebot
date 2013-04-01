@@ -11,7 +11,7 @@ For more information about err you can find it here: https://github.com/gbin/err
 Dependencies
 ::
     pip install requests
-    pip install BeautifulSoup
+    pip install beautifulsoup4
 
 If you have the admin rights on an err chatbot simply use
 ::
