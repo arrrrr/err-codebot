@@ -1,6 +1,6 @@
 __author__ = 'gbin'
 import requests
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 class CodePad(object):
     def __init__(self, code=None, lang="Python", private=True, run=True):
@@ -22,8 +22,8 @@ class CodePad(object):
                 name = a.get('name')
                 if name and name.startswith('output-line'):
                     res = a.parent.parent.parent.nextSibling.nextSibling.div.pre.string
-                    if res:
+                    if res and result != res:
                         result += res
                     else:
-                        result += "Error, check the error here : " + r.url
+                        result = "Error, check the error here : " + r.url
         return result.strip('\n ').replace('&quot;', '"')
