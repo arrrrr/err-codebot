@@ -49,7 +49,7 @@ class CodeBot(BotPlugin):
         if 'result' in r:
             return "{0} :: {1}".format(r['result'], r['type'])
         else:
-            return "{0}: {1}".format(*r.items()[0])
+            return "{0}: {1}".format(*list(r.items())[0])
 
     @botcmd
     @trollguard
