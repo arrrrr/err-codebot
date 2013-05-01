@@ -45,7 +45,7 @@ class CodeBot(BotPlugin):
     @trollguard
     def hs(self, mess, args):
         """ Evaluate the Haskell expression in ghci (tryhaskell.org) """
-        r = requests.get("http://tryhaskell.org/haskell.json", params={'method':'eval', 'expr':args}).json
+        r = requests.get("http://tryhaskell.org/haskell.json", params={'method':'eval', 'expr':args}).json()
         if r.has_key('result'):
             return "{0} :: {1}".format(r['result'], r['type'])
         else:
